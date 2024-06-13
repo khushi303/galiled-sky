@@ -6,12 +6,32 @@ import GaliledVideo from "./GaliledVideo";
 import { BtnFuture } from "./common/Icons";
 import lineSquaretop from "../../public/assets/images/png/lineSquaretop.png";
 import lineSquarebottom from "../../public/assets/images/png/lineSquarebottom.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Hero() {
-  const [scrollToBottom, setScrollToBottom] = useState(false);
+  const [toggleScroll, setToggleScroll] = useState(false);
+  useEffect(() => {
+    if (toggleScroll === true) {
+      const element = document.getElementById("footer");
+      element?.scrollIntoView({
+        behavior: "smooth",
+        block: "end",
+        inline: "nearest",
+      });
+    } else {
+      const element = document.getElementById("hero");
+      element?.scrollIntoView({
+        behavior: "smooth",
+        block: "end",
+        inline: "nearest",
+      });
+    }
+  });
   return (
-    <div className="bg-hero bg-cover bg-no-repeat bg-center 2xl:h-[810px] relative flex flex-col overflow-x-hidden">
+    <div
+      id="hero"
+      className="bg-hero bg-cover bg-no-repeat bg-center 2xl:h-[810px] relative flex flex-col overflow-x-hidden"
+    >
       <Navbar />
       <div className="container xl:max-w-[1172px] flex-grow relative z-20 flex justify-center items-center flex-col 2xl:py-[unset] md:pt-[164px] sm:pt-[140px] pt-[100px] lg:pb-[236px]  md:pb-[200px] sm:pb-[170px] pb-[130px]">
         <BtnFuture />
@@ -30,12 +50,12 @@ export default function Hero() {
       <GaliledVideo />
       <div className="absolute bottom-[2%] z-30 left-0 right-0 flex items-center justify-center cursor-pointer">
         <div
-          onClick={() => setScrollToBottom(!scrollToBottom)}
+          onClick={() => setToggleScroll(!toggleScroll)}
           className="border border-cinnabar lg:p-2 p-1 inline-block lg:h-[76px] h-[50px] rounded-[55px]"
         >
           <div
             className={`${
-              scrollToBottom ? "translate-y-[110%]" : "translate-y-0"
+              toggleScroll ? "translate-y-[110%]" : "translate-y-0"
             } lg:w-[27px] lg:h-[27px] w-[17px] h-[17px] rounded-full bg-cinnabar duration-300`}
           ></div>
         </div>

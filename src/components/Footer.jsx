@@ -36,7 +36,7 @@ export default function Footer() {
     setShowModal(false);
   };
   return (
-    <div>
+    <div id="footer">
       <div className="container xl:max-w-[1172px] lg:pt-24 md:pt-16 sm:pt-14 pt-12 mt-1">
         <div className="flex justify-between flex-wrap">
           <div className="lg:w-6/12 w-full">
