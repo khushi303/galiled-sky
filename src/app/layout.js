@@ -1,25 +1,20 @@
-import { Inter } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
-
 export const metadata = {
-  metadataBase: "https://rizz-gpt-next.vercel.app/",
+  metadataBase: "https://galiled-sky.vercel.app/",
   title: "GALILED SKY",
   description:
-    "BEYOND ENTERTAINMENT",
+    "Beyond Entertainment",
   openGraph: {
     title: "GALILED SKY",
     description:
-      "BEYOND ENTERTAINMENT",
+      "Beyond Entertainment",
     images: ["/assets/images/webp/meta.webp"],
   },
 };
-
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body>{children}</body>
     </html>
   );
 }
