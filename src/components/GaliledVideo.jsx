@@ -12,23 +12,30 @@ export default function GaliledVideo() {
 
   useEffect(() => {
     const videoElement = document.getElementById("bg-video");
-    videoElement.src = videos[currentVideo];
-    videoElement.play();
-    setIsFading(true); // Start fading in
-    videoElement.addEventListener("ended", () => {
-      setCurrentVideo((prevVideo) => (prevVideo + 1) % videos.length);
-      setIsFading(false); // Reset fade-in effect for next video
-    });
-  }, [currentVideo]);
-
-  useEffect(() => {
-    if (isFading) {
-      const timer = setTimeout(() => {
-        setIsFading(false);
-      }, 1000); // Duration of fade-in effect
-      return () => clearTimeout(timer);
+    if (currentVideo > 0) {
+      // Check if it's not the first video
+      setIsFading(true); // Start fading in before changing the video
+      setTimeout(() => {
+        videoElement.src = videos[currentVideo];
+        videoElement.play();
+        setIsFading(false); // End fading in after the video starts
+      }, 200); // Duration of fade-in effect
+    } else {
+      videoElement.src = videos[currentVideo];
+      videoElement.play();
     }
-  }, [isFading]);
+
+    const handleVideoEnd = () => {
+      setCurrentVideo((prevVideo) => (prevVideo + 1) % videos.length);
+    };
+
+    videoElement.addEventListener("ended", handleVideoEnd);
+
+    // Cleanup function to remove the event listener
+    return () => {
+      videoElement.removeEventListener("ended", handleVideoEnd);
+    };
+  }, [currentVideo]);
 
   return (
     <div className="absolute inset-0 z-[1] pointer-events-none">
@@ -38,7 +45,9 @@ export default function GaliledVideo() {
         autoPlay
         playsInline
         controls={false}
-        className={`w-full h-full object-cover ${isFading ? "fade-in" : ""}`}
+        className={`w-full h-full object-cover transition-opacity duration-1000 ${
+          isFading ? "opacity-0" : "opacity-100"
+        }`}
       />
     </div>
   );
