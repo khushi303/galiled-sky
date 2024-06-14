@@ -8,7 +8,6 @@ export default function Footer() {
   const [email, setEmail] = useState("");
   const [isValid, setIsValid] = useState(true);
   const [showModal, setShowModal] = useState(false);
-
   const handleChange = (e) => {
     const { value } = e.target;
     setEmail(value);
@@ -37,7 +36,7 @@ export default function Footer() {
   };
   return (
     <div id="footer">
-      <div className="container xl:max-w-[1172px] lg:pt-24 md:pt-16 sm:pt-14 pt-12 mt-1">
+      <div className="container xl:max-w-[1172px] lg:pt-24 md:pt-16 sm:pt-14 pt-10">
         <div className="flex justify-between flex-wrap">
           <div className="lg:w-6/12 w-full">
             <Link href={"/"}>
@@ -67,13 +66,13 @@ export default function Footer() {
               ))}
             </div>
           </div>
-          <div className="lg:w-6/12 flex lg:justify-end lg:mt-0 mt-10 w-full">
+          <div className="lg:w-6/12 flex lg:justify-end lg:mt-0 sm:mt-10 mt-8 w-full">
             <div className="flex sm:flex-row flex-col xl:gap-[76px] sm:gap-12 gap-6 max-lg:w-full">
               <div className="sm:w-4/12 lg:w-[auto] w-full">
                 <p className="text-base font-normal text-offBlack mb-4">
                   Quick Links
                 </p>{" "}
-                <ul className="flex flex-col gap-3">
+                <ul className="flex sm:flex-col flex-row max-sm:flex-wrap sm:gap-3 gap-x-5 gap-y-2">
                   {FooterLinks.map((value, index) => (
                     <li key={index}>
                       <Link
@@ -126,7 +125,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="border-t border-offBlack border-opacity-15 py-6 mt-[45px]">
+      <div className="border-t border-offBlack border-opacity-15 sm:py-6 py-4 sm:mt-[45px] mt-9">
         <p className="text-base font-normal text-offBlack px-4 text-center">
           {new Date().getFullYear()} Copyrights Galileo Sky, All Rights Reserved
         </p>
