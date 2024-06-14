@@ -18,7 +18,9 @@ export default function Navbar() {
     }
   }, [nav]);
   return (
-    <div className="bg-white bg-opacity-[7%] relative z-[51]">
+    <div
+      className="bg-white bg-opacity-[7%] relative z-[51] backdrop-blur-lg shadow-[0px_7px_10.9px_0px_#0000002E]"
+    >
       <div className="container xl:max-w-[900px]">
         <div className="flex gap-10 items-center max-lg:justify-between">
           <ul className="dropdown relative items-center gap-6 lg:flex hidden">
@@ -26,7 +28,9 @@ export default function Navbar() {
               onClick={toggleDropdown}
               className="flex gap-1 items-center cursor-pointer relative after:w-0 after:absolute after:-bottom-1 after:left-[50%] after:bg-white after:h-0.5 after:rounded hover:after:w-full hover:after:left-0 after:transition-all after:duration-300 after:ease-linear z-20"
             >
-              <p className="text-base font-semibold text-offWhite">Games</p>
+              <p className="sm:text-base text-sm font-semibold text-offWhite">
+                Games
+              </p>
               <Dropdown />
               {isDropdownOpen && (
                 <ul className="flex flex-col items-center justify-center absolute top-11 bg-white bg-opacity-40 px-7 gap-3 py-5 z-10">
@@ -34,7 +38,7 @@ export default function Navbar() {
                     <li key={index} className="">
                       <Link
                         href={"#game1"}
-                        className="text-base font-normal text-white text-nowrap hover:text-tamarillo transition-all duration-300 ease-linear"
+                        className="sm:text-base text-sm font-normal text-white text-nowrap hover:text-tamarillo transition-all duration-300 ease-linear"
                       >
                         {value.title}
                       </Link>
@@ -51,7 +55,7 @@ export default function Navbar() {
             ></div>
             <Link
               href={"/"}
-              className="text-base font-semibold text-offWhite relative after:w-0 after:absolute after:-bottom-1 after:left-[50%] after:bg-white after:h-0.5 after:rounded hover:after:w-full hover:after:left-0 after:transition-all after:duration-300 after:ease-linear"
+              className="sm:text-base text-sm font-semibold text-offWhite relative after:w-0 after:absolute after:-bottom-1 after:left-[50%] after:bg-white after:h-0.5 after:rounded hover:after:w-full hover:after:left-0 after:transition-all after:duration-300 after:ease-linear"
             >
               AI-Platform
             </Link>
@@ -69,14 +73,14 @@ export default function Navbar() {
             <li className="flex gap-1 items-center cursor-pointer relative">
               <Link
                 href={"#team"}
-                className="text-base font-semibold text-offWhite  relative after:w-0 after:absolute after:-bottom-1 after:left-[50%] after:bg-white after:h-0.5 after:rounded hover:after:w-full hover:after:left-0 after:transition-all after:duration-300 after:ease-linear"
+                className="sm:text-base text-sm font-semibold text-offWhite  relative after:w-0 after:absolute after:-bottom-1 after:left-[50%] after:bg-white after:h-0.5 after:rounded hover:after:w-full hover:after:left-0 after:transition-all after:duration-300 after:ease-linear"
               >
                 Team
               </Link>
             </li>
             <Link
               href={"#careers"}
-              className="text-base font-semibold text-offWhite relative after:w-0 after:absolute after:-bottom-1 after:left-[50%] after:bg-white after:h-0.5 after:rounded hover:after:w-full hover:after:left-0 after:transition-all after:duration-300 after:ease-linear"
+              className="sm:text-base text-sm font-semibold text-offWhite relative after:w-0 after:absolute after:-bottom-1 after:left-[50%] after:bg-white after:h-0.5 after:rounded hover:after:w-full hover:after:left-0 after:transition-all after:duration-300 after:ease-linear"
             >
               Careers
             </Link>
@@ -92,7 +96,7 @@ export default function Navbar() {
                   key={index}
                   href={value.link}
                   onClick={index === 0 && toggleDropdown}
-                  className="text-base font-semibold text-offWhite relative after:w-0 after:absolute after:-bottom-1 after:left-[50%] after:bg-white after:h-0.5 after:rounded hover:after:w-full hover:after:left-0 after:transition-all after:duration-300 after:ease-linear flex gap-1 items-center z-[52]"
+                  className="sm:text-base text-sm font-semibold text-offWhite relative after:w-0 after:absolute after:-bottom-1 after:left-[50%] after:bg-white after:h-0.5 after:rounded hover:after:w-full hover:after:left-0 after:transition-all after:duration-300 after:ease-linear flex gap-1 items-center z-[52]"
                 >
                   {value.title}
                   {index === 0 && <Dropdown />}
@@ -103,7 +107,7 @@ export default function Navbar() {
                       <li key={index} className="">
                         <Link
                           href={"#game1"}
-                          className="text-base font-normal text-white text-nowrap hover:text-tamarillo transition-all duration-300 ease-linear"
+                          className="sm:text-base text-sm font-normal text-white text-nowrap hover:text-tamarillo transition-all duration-300 ease-linear"
                         >
                           {value.title}
                         </Link>

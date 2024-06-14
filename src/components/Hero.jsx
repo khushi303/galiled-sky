@@ -39,7 +39,7 @@ export default function Hero() {
         <h1 className="ff-openSans font-normal xl:text-[90px] mt-1.5 lg:text-6xl sm:text-5xl text-4xl text-white text-center leading-[110%]">
           BEYOND <span className="text-cinnabar block">ENTERTAINMENT</span>
         </h1>
-        <p className="text-base font-normal text-offWhite max-w-[809px] mx-auto text-center mt-4 sm:px-12 px-6">
+        <p className="sm:text-base text-sm font-normal text-offWhite max-w-[809px] mx-auto text-center mt-4 sm:px-12 px-6">
           Galileo Sky, founded by industry experts, is redefining the gaming
           landscape. With a blend of groundbreaking technology and immersive
           entertainment, we create world-class gaming experiences and thriving

@@ -21,7 +21,7 @@ export default function Sidebar() {
             className="lg:w-[15px] w-2 sm:h-[145px] h-[120px] bg-offWhite rounded-s-[30px] lg:hidden"
           ></span>
           <span className="lg:w-[15px] w-2 sm:h-[145px] h-[120px] bg-offWhite rounded-s-[30px] lg:block hidden"></span>
-          <div className="flex flex-col justify-center gap-[28px] items-center bg-offWhite bg-opacity-15 w-[60px] md:w-[80px] lg:h-[368px] lg:px-[22px] px-3 lg:py-[unset] md:py-10 py-8">
+          <div className="flex flex-col justify-center gap-[28px] items-center bg-offWhite bg-opacity-15 backdrop-blur-sm w-[60px] md:w-[80px] lg:h-[368px] lg:px-[22px] px-3 lg:py-[unset] md:py-10 py-8">
             {heroIcons.map((icon, index) => {
               return (
                 <div
