@@ -42,13 +42,15 @@ export default function Navbar() {
               AI-Platform
             </Link>
           </ul>
-          <Image
-            src={"/assets/images/svg/navLogo.svg"}
-            alt="navlogo"
-            width={372}
-            height={71}
-            className="lg:w-[372px] lg:h-[71px] sm:w-[270px] w-[220px] relative z-30"
-          />
+          <Link href={"/"}>
+            <Image
+              src={"/assets/images/svg/navLogo.svg"}
+              alt="navlogo"
+              width={372}
+              height={71}
+              className="lg:w-[372px] lg:h-[71px] sm:w-[270px] w-[220px] relative z-30"
+            />
+          </Link>
           <ul className="dropdown items-center gap-6 lg:flex hidden">
             <li className="flex gap-1 items-center cursor-pointer relative">
               <Link
