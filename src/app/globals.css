@@ -17,9 +17,9 @@
   font-family: "openSans", sans-serif !important;
 }
 
-.dropdown li:hover ~ div.dropcontent {
-  opacity: 100%;
-  height: auto;
+.dropdown li:hover~div.dropcontent {
+  display: flex !important;
+  max-height: auto;
 }
 
 .fade-in {
@@ -30,6 +30,7 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }

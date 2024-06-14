@@ -6,8 +6,10 @@ import Image from "next/image";
 import { DropdownData, heroLinks } from "./common/Helper";
 
 export default function Navbar() {
-  const [nav, setNav] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
 
+  const [nav, setNav] = useState(false);
   useEffect(() => {
     if (nav === true) {
       document.body.style.overflowY = "hidden";
@@ -20,21 +22,41 @@ export default function Navbar() {
       <div className="container xl:max-w-[900px]">
         <div className="flex gap-10 items-center max-lg:justify-between">
           <ul className="dropdown relative items-center gap-6 lg:flex hidden">
-            <li className="flex gap-1 items-center cursor-pointer relative after:w-0 after:absolute after:-bottom-1 after:left-[50%] after:bg-white after:h-0.5 after:rounded hover:after:w-full hover:after:left-0 after:transition-all after:duration-300 after:ease-linear ">
+            <li
+              onClick={toggleDropdown}
+              className="flex gap-1 items-center cursor-pointer relative after:w-0 after:absolute after:-bottom-1 after:left-[50%] after:bg-white after:h-0.5 after:rounded hover:after:w-full hover:after:left-0 after:transition-all after:duration-300 after:ease-linear z-20"
+            >
               <p className="text-base font-semibold text-offWhite">Games</p>
               <Dropdown />
+              {isDropdownOpen && (
+                <ul className="flex flex-col items-center justify-center absolute top-11 bg-white bg-opacity-40 px-4 gap-2 py-5">
+                  <li className="">
+                    <Link
+                      href={"#game1"}
+                      className="text-base font-normal text-white text-nowrap"
+                    >
+                      Game 1
+                    </Link>
+                  </li>
+                  <li className="">
+                    <Link
+                      href={"#game2"}
+                      className="text-base font-normal text-white text-nowrap"
+                    >
+                      Game 2
+                    </Link>
+                  </li>
+                  <li className="">
+                    <Link
+                      href={"#game3"}
+                      className="text-base font-normal text-white text-nowrap"
+                    >
+                      Game 3
+                    </Link>
+                  </li>
+                </ul>
+              )}
             </li>
-            <div className="absolute h-0 opacity-0 dropcontent transition-all duration-300 ease-linear -left-4 top-[47px] bg-white bg-opacity-5 backdrop-blur-2xl flex flex-col w-52">
-              {DropdownData.map((value, index) => (
-                <Link
-                  key={index}
-                  href={"/"}
-                  className="py-1.5 w-full text-center text-base text-offWhite font-normal"
-                >
-                  {value.title}
-                </Link>
-              ))}
-            </div>
             <Link
               href={"/"}
               className="text-base font-semibold text-offWhite relative after:w-0 after:absolute after:-bottom-1 after:left-[50%] after:bg-white after:h-0.5 after:rounded hover:after:w-full hover:after:left-0 after:transition-all after:duration-300 after:ease-linear"
@@ -51,17 +73,17 @@ export default function Navbar() {
               className="lg:w-[372px] lg:h-[71px] sm:w-[270px] w-[220px] relative z-30"
             />
           </Link>
-          <ul className="dropdown items-center gap-6 lg:flex hidden">
+          <ul className="items-center gap-6 lg:flex hidden">
             <li className="flex gap-1 items-center cursor-pointer relative">
               <Link
-                href={""}
+                href={"#team"}
                 className="text-base font-semibold text-offWhite  relative after:w-0 after:absolute after:-bottom-1 after:left-[50%] after:bg-white after:h-0.5 after:rounded hover:after:w-full hover:after:left-0 after:transition-all after:duration-300 after:ease-linear"
               >
                 Team
               </Link>
             </li>
             <Link
-              href={"/"}
+              href={"#careers"}
               className="text-base font-semibold text-offWhite relative after:w-0 after:absolute after:-bottom-1 after:left-[50%] after:bg-white after:h-0.5 after:rounded hover:after:w-full hover:after:left-0 after:transition-all after:duration-300 after:ease-linear"
             >
               Careers
