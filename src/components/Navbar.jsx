@@ -47,7 +47,7 @@ export default function Navbar() {
               onClick={toggleDropdown}
               className={` ${
                 isDropdownOpen ? "block" : "hidden"
-              } fixed inset-0 z-[1]`}
+              } fixed inset-0 z-[40]`}
             ></div>
             <Link
               href={"/"}
@@ -87,14 +87,39 @@ export default function Navbar() {
             } fixed lg:hidden flex bg-black flex-col top-0 bottom-0 h-full transition-all duration-300 ease-linear w-full  justify-center items-center gap-5 z-[51]`}
           >
             {heroLinks.map((value, index) => (
-              <Link
-                key={index}
-                href={value.link}
-                className="text-base font-semibold text-offWhite relative after:w-0 after:absolute after:-bottom-1 after:left-[50%] after:bg-white after:h-0.5 after:rounded hover:after:w-full hover:after:left-0 after:transition-all after:duration-300 after:ease-linear flex gap-1 items-center"
-              >
-                {value.title}
-                {index === 0 && <Dropdown />}
-              </Link>
+              <li className="relative">
+                <Link
+                  key={index}
+                  href={value.link}
+                  onClick={index === 0 && toggleDropdown}
+                  className="text-base font-semibold text-offWhite relative after:w-0 after:absolute after:-bottom-1 after:left-[50%] after:bg-white after:h-0.5 after:rounded hover:after:w-full hover:after:left-0 after:transition-all after:duration-300 after:ease-linear flex gap-1 items-center z-[52]"
+                >
+                  {value.title}
+                  {index === 0 && <Dropdown />}
+                </Link>
+                {index === 0 && isDropdownOpen && (
+                  <ul className="flex flex-col items-center justify-center absolute top-5 left-24 bg-white bg-opacity-40 px-7 gap-3 py-5 z-10">
+                    {DropdownData.map((value, index) => (
+                      <li key={index} className="">
+                        <Link
+                          href={"#game1"}
+                          className="text-base font-normal text-white text-nowrap hover:text-tamarillo transition-all duration-300 ease-linear"
+                        >
+                          {value.title}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                {index === 0 && (
+                  <div
+                    onClick={toggleDropdown}
+                    className={` ${
+                      isDropdownOpen ? "block" : "hidden"
+                    } fixed inset-0 z-[40]`}
+                  ></div>
+                )}
+              </li>
             ))}
           </div>
           <div className="flex items-center lg:hidden cursor-pointer">

@@ -32,8 +32,9 @@ export default function Hero() {
       id="hero"
       className="bg-hero bg-cover bg-no-repeat bg-center 2xl:h-[810px] relative flex flex-col overflow-x-hidden"
     >
+      {/* ==========================Nav Bar====================== */}
       <Navbar />
-      <div className="container xl:max-w-[1172px] flex-grow relative z-20 flex justify-center items-center flex-col 2xl:py-[unset] md:pt-[164px] sm:pt-[140px] pt-[100px] lg:pb-[236px]  md:pb-[200px] sm:pb-[170px] pb-[130px]">
+      <div className="container xl:max-w-[1172px] flex-grow relative z-20 flex justify-center items-center flex-col 2xl:py-[unset] md:pt-[164px] sm:pt-[140px] pt-[80px] lg:pb-[236px]  md:pb-[200px] sm:pb-[170px] pb-[110px]">
         <BtnFuture />
         <h1 className="ff-openSans font-normal xl:text-[90px] mt-1.5 lg:text-6xl sm:text-5xl text-4xl text-white text-center leading-[110%]">
           BEYOND <span className="text-cinnabar block">ENTERTAINMENT</span>
@@ -45,9 +46,13 @@ export default function Hero() {
           digital economies that captivate and inspire
         </p>
       </div>
+      {/* ==========================Side Bar====================== */}
       <Sidebar />
-      <div className="top-0 bottom-0 left-0 right-0 bg-black bg-opacity-70 absolute z-10"></div>
+      {/* ==========================Black Layer=================== */}
+      <div className="top-0 bottom-0 left-0 right-0 bg-black bg-opacity-75 absolute z-10"></div>
+      {/* ============================video======================= */}
       <GaliledVideo />
+      {/* =========================toggle button================== */}
       <div className="absolute bottom-[2%] z-30 left-0 right-0 flex items-center justify-center cursor-pointer">
         <div
           onClick={() => setToggleScroll(!toggleScroll)}
@@ -60,6 +65,7 @@ export default function Hero() {
           ></div>
         </div>
       </div>
+      {/* =======================Top Square Image=================*/}
       <div className="absolute top-[15%] left-0 z-30 pointer-events-none">
         <Image
           src={lineSquaretop}
@@ -69,6 +75,7 @@ export default function Hero() {
           className="lg:max-w-[226px] w-full md:max-w-[150px] sm:max-w-[120px] max-w-[100px]"
         />
       </div>
+      {/* =======================bottom Square Image========================*/}
       <div className="absolute bottom-[15%] right-[8%] z-30 pointer-events-none">
         <Image
           src={lineSquarebottom}
