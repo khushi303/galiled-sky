@@ -29,33 +29,24 @@ export default function Navbar() {
               <p className="text-base font-semibold text-offWhite">Games</p>
               <Dropdown />
               {isDropdownOpen && (
-                <ul className="flex flex-col items-center justify-center absolute top-11 bg-white bg-opacity-40 px-4 gap-2 py-5">
-                  <li className="">
-                    <Link
-                      href={"#game1"}
-                      className="text-base font-normal text-white text-nowrap"
-                    >
-                      Game 1
-                    </Link>
-                  </li>
-                  <li className="">
-                    <Link
-                      href={"#game2"}
-                      className="text-base font-normal text-white text-nowrap"
-                    >
-                      Game 2
-                    </Link>
-                  </li>
-                  <li className="">
-                    <Link
-                      href={"#game3"}
-                      className="text-base font-normal text-white text-nowrap"
-                    >
-                      Game 3
-                    </Link>
-                  </li>
+                <ul className="flex flex-col items-center justify-center absolute top-11 bg-white bg-opacity-40 px-4 gap-2 py-5 z-10">
+                  {DropdownData.map((value, index) => (
+                    <li key={index} className="">
+                      <Link
+                        href={"#game1"}
+                        className="text-base font-normal text-white text-nowrap"
+                      >
+                        {value.title}
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
               )}
+              <div
+                className={` ${
+                  isDropdownOpen ? "block" : "hidden"
+                } fixed inset-0 z-[1]`}
+              ></div>
             </li>
             <Link
               href={"/"}
