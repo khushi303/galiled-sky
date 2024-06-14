@@ -42,12 +42,13 @@ export default function Navbar() {
                   ))}
                 </ul>
               )}
-              <div
-                className={` ${
-                  isDropdownOpen ? "block" : "hidden"
-                } fixed inset-0 z-[1]`}
-              ></div>
             </li>
+            <div
+              onClick={toggleDropdown}
+              className={` ${
+                isDropdownOpen ? "block" : "hidden"
+              } fixed inset-0 z-[1]`}
+            ></div>
             <Link
               href={"/"}
               className="text-base font-semibold text-offWhite relative after:w-0 after:absolute after:-bottom-1 after:left-[50%] after:bg-white after:h-0.5 after:rounded hover:after:w-full hover:after:left-0 after:transition-all after:duration-300 after:ease-linear"
