@@ -112,7 +112,7 @@ export default function Footer() {
                   </button>
                 </form>
                 {!isValid && (
-                  <p className="absolute inline-block mt-2 mb-1 text-sm !leading-5 font-normal text-center text-red-700 rounded-lg -bottom-7 left-4 ">
+                  <p className="inline-block mt-1 mb-1 text-sm !leading-5 font-normal text-center text-red-700 rounded-lg">
                     please enter a valid email
                   </p>
                 )}

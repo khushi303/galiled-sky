@@ -16,7 +16,7 @@ export default function Navbar() {
     }
   }, [nav]);
   return (
-    <div className="bg-white bg-opacity-[7%] relative z-40">
+    <div className="bg-white bg-opacity-[7%] relative z-[51]">
       <div className="container xl:max-w-[900px]">
         <div className="flex gap-10 items-center max-lg:justify-between">
           <ul className="dropdown relative items-center gap-6 lg:flex hidden">

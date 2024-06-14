@@ -43,7 +43,7 @@ export default function Sidebar() {
           openSidebar
             ? "opacity-100 right-0 pointer-events-auto"
             : "opacity-0 right-[-100%] pointer-events-none"
-        } fixed top-0 bottom-0 left-0 bg-black bg-opacity-40 z-40 duration-300 backdrop-blur-lg`}
+        } fixed top-0 bottom-0 left-0 bg-black bg-opacity-40 z-40 duration-300 backdrop-blur`}
       ></div>
     </div>
   );
